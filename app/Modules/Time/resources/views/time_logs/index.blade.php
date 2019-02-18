@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-sm-12">
         <a href="{{route('time.time_logs.create')}}" class="btn btn-primary pull-right">{{trans('app.time.time_logs.add_new')}}</a>
-        <a href="{{route('time.time_logs.salary_report')}}" class="btn btn-default pull-right">{{trans('app.pim.employees.salaries.salary_report')}}</a>
+        <!--a href="{{route('time.time_logs.salary_report')}}" class="btn btn-default pull-right">{{trans('app.pim.employees.salaries.salary_report')}}</a-->
     </div>
 </div>
 <div class="row">
@@ -48,7 +48,30 @@
             columns: [
                 {data: 0, name: 'user_id', sortable: false, searchable: false},
                 {data: 1, name: 'time', sortable: true, searchable: false}
-            ]
+            ],language: {
+                "sProcessing":    "Загрузка...",
+                "sLengthMenu":    "Показать _MENU_",
+                "sZeroRecords":   "Результатов не найдено",
+                "sEmptyTable":    "В этой таблице нет данных",
+                "sInfo":          "Отображение записей с _START_ по _END_ из _TOTAL_ записей",
+                "sInfoEmpty":     "Показаны записи с 0 по 0 из 0 записей",
+                "sInfoFiltered":  "(фильтрация в общей сложности _MAX_ записей)",
+                "sInfoPostFix":   "",
+                "sSearch":        "Поиск:",
+                "sUrl":           "",
+                "sInfoThousands":  ",",
+                "sLoadingRecords": "Загрузка ...",
+                "oPaginate": {
+                    "sFirst":    "первый",
+                    "sLast":    "последний",
+                    "sNext":    "следующий",
+                    "sPrevious": "предыдущий"
+                },
+                "oAria": {
+                    "sSortAscending":  ": Показать столбец по возрастанию",
+                    "sSortDescending": ": Показать столбец по убыванию"
+                }
+            }
         });
 
         table.columns().every(function () {

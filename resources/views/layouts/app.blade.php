@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'HRM') }}</title>
+    <title>Система работы с персоналом</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -22,7 +22,7 @@
 </head>
 <body style="z-index:-1;background-color: #f6f6f6">
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top nav-center">
             <div class="container">
                 <div class="navbar-header">
 
@@ -35,8 +35,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'HRM') }}
+                    <a class="navbar-brand brand-centered" href="{{ url('/') }}">
+                        Система работы с персоналом
                     </a>
                 </div>
             </div>

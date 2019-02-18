@@ -30,7 +30,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a href="{{route('employee.time.index')}}">{{trans('app.time.time_logs.main')}}</a></li>
-            <li><a href="{{route('employee.time.report')}}">{{trans('app.time.time_logs.report')}}</a></li>
+            <!--li><a href="{{route('employee.time.report')}}">{{trans('app.time.time_logs.report')}}</a></li-->
           </ul>
         </li>
         <li class="{{ $current == 'employee.salary' ? 'active' : ''}}">

@@ -102,7 +102,9 @@ class EmployeesController extends Controller
         $employeeData = $request->all();
         $employeeData['role'] = $this->employeeRepository->model::USER_ROLE_EMPLOYEE;
         $employeeData = $this->employeeRepository->create($employeeData);
-        $this->sendPassword($employeeData->id);
+        $password = $request->password;
+        $this->employeeRepository->update($employeeData->id, ['password' => bcrypt($password)]);
+        //$this->sendPassword($employeeData->id);
 
 
         if(env('ZAPIER_BIRTHDAY_HOOK')) {
@@ -183,6 +185,7 @@ class EmployeesController extends Controller
     public function update($id, EmployeeRequest $request)
     {
         $employeeData = $this->employeeRepository->update($id, $request->all());
+        $this->employeeRepository->update($id, ['password' => bcrypt($request->password)]);
         $request->session()->flash('success', trans('app.pim.employees.update_success'));
         return redirect()->route('pim.employees.edit', $employeeData->id);
     }

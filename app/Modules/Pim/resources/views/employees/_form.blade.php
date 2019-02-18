@@ -17,6 +17,12 @@
     </div>
 </div>
 <div class="form-group">
+    {!! Form::label('password', "Пароль".':', ['class' => 'col-sm-3']) !!}
+    <div class="col-sm-6">
+        {!! Form::input('password','password', null, ['class' => 'form-control']) !!}
+    </div>
+</div>
+<div class="form-group">
     {!! Form::label('gender', trans('app.pim.employees.gender').':', ['class' => 'col-sm-3']) !!}
     <div class="col-sm-6">
         {!! Form::label('male', trans('app.pim.employees.gender_male')) !!}
@@ -25,6 +31,7 @@
         {!! Form::radio('gender', 'f', @$employee->gender == 'f', ['id' => 'female']) !!}
     </div>
 </div>
+
 <div class="form-group">
     {!! Form::label('birth_date', trans('app.pim.employees.birth_date').':', ['class' => 'col-sm-3']) !!}
     <div class="col-sm-6">

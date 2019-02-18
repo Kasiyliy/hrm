@@ -44,7 +44,30 @@
                 {data: 0, name: 'id'},
                 {data: 1, name: 'name'},
                 {data: 2, name: 'actions', sortable: false, searchable: false}
-            ]
+            ],language: {
+                "sProcessing":    "Загрузка...",
+                "sLengthMenu":    "Показать _MENU_",
+                "sZeroRecords":   "Результатов не найдено",
+                "sEmptyTable":    "В этой таблице нет данных",
+                "sInfo":          "Отображение записей с _START_ по _END_ из _TOTAL_ записей",
+                "sInfoEmpty":     "Показаны записи с 0 по 0 из 0 записей",
+                "sInfoFiltered":  "(фильтрация в общей сложности _MAX_ записей)",
+                "sInfoPostFix":   "",
+                "sSearch":        "Поиск:",
+                "sUrl":           "",
+                "sInfoThousands":  ",",
+                "sLoadingRecords": "Загрузка ...",
+                "oPaginate": {
+                    "sFirst":    "первый",
+                    "sLast":    "последний",
+                    "sNext":    "следующий",
+                    "sPrevious": "предыдущий"
+                },
+                "oAria": {
+                    "sSortAscending":  ": Показать столбец по возрастанию",
+                    "sSortDescending": ": Показать столбец по убыванию"
+                }
+            }
         });
         table.columns().every(function () {
             var that = this;
