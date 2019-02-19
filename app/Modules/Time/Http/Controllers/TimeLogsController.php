@@ -181,7 +181,7 @@ class TimeLogsController extends Controller
         $totalHours = 0;
         foreach ($clientLogs as $i => $clientLog) {
             $totalHours += $clientLog->time;
-            $clientLogs[$i]->projectLogs = $timeLogRepository->getEmployeeReport($userId, $start, $end, 'project', ['projects.client_id' => $clientLog->client_id]);
+            $clientLogs[$i]->projectLogs = $timeLogRepository->getEmployeeReport($userId, $start, $end, 'project','clients.name', ['projects.client_id' => $clientLog->client_id]);
             foreach ($clientLogs[$i]->projectLogs as $j => $projectLog) {
                 $clientLogs[$i]->projectLogs[$j]->taskLogs = $timeLogRepository->getEmployeeReport($userId, $start, $end, 'task', ['time_logs.project_id' => $projectLog->project_id]);
             }
