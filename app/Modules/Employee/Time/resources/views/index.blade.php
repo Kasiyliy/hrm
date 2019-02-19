@@ -1,5 +1,37 @@
 @extends('layouts.main_employee')
 @section('content')
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="custom-panel">
+            <div class="custom-panel-heading">Проекты</div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>Наименование</th>
+                    <th>Описание</th>
+                    <th>Клиент</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($projects2 as $project)
+                    <tr>
+                        <td>
+                            {{$project->name}}
+                        </td>
+                        <td>
+                            {{$project->description}}
+                        </td>
+                        <td>
+                            {{$project->client->name}}
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-sm-12">
         <a href="{{route('employee.time.create')}}" class="btn btn-primary pull-right">{{trans('app.time.time_logs.add_new')}}</a>

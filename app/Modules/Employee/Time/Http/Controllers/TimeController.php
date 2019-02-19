@@ -31,8 +31,9 @@ class TimeController extends Controller {
     {
         $id = Auth::user()->id;
         $projects = $projectRepository->getByEmployee($id)->pluck('name', 'id');
+        $projects2 = $projectRepository->getByEmployee($id)->has('client')->with('client')->get();
         $employees = $employeeRepository->getById($id)->pluck('first_name', 'id');
-        return view('employee.time::index', compact('projects', 'employees'));
+        return view('employee.time::index', compact('projects', 'employees', 'projects2'));
     }
 
     /**
